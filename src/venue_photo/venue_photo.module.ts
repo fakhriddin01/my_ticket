@@ -4,9 +4,11 @@ import { VenuePhotoController } from './venue_photo.controller';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Venue } from '../venue/models/venue.model';
 import { VenuePhoto } from './models/venue_photo.model';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
-  imports:[SequelizeModule.forFeature([ Venue, VenuePhoto])],
+  imports:[SequelizeModule.forFeature([ Venue, VenuePhoto]),JwtModule
+],
   controllers: [VenuePhotoController],
   providers: [VenuePhotoService]
 })

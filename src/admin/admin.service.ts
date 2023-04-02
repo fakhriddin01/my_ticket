@@ -109,7 +109,7 @@ export class AdminService {
 
   
   private async generateToken(user: Admin){
-    const jwtPayload = { id: user.id };
+    const jwtPayload = { id: user.id, is_active: user.is_active, is_creator: user.is_creator };
     const [accessToken, refreshToken] = await Promise.all([
       this.jwtService.signAsync(jwtPayload, {
         secret: process.env.ACCESS_TOKEN_KEY,

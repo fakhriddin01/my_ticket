@@ -40,6 +40,18 @@ import { CustomerCard } from './customer_card/models/customer_card.model';
 import { CartModule } from './cart/cart.module';
 import { AdminModule } from './admin/admin.module';
 import { Admin } from './admin/models/admin.model';
+import { BookingModule } from './booking/booking.module';
+import { PaymentMethodModule } from './payment_method/payment_method.module';
+import { PaymentMethod } from './payment_method/models/payment_method.model';
+import { DiscountModule } from './discount/discount.module';
+import { Discount } from './discount/models/discount.model';
+import { Booking } from './booking/models/booking.model';
+import { Cart } from './cart/models/cart.model';
+import { CustomerAddressModule } from './customer_address/customer_address.module';
+import { CountryModule } from './country/country.module';
+import { Country } from './country/models/country.model';
+import { CustomerAddress } from './customer_address/models/customer_address.model';
+import { JwtModule } from '@nestjs/jwt';
 
 
 @Module({
@@ -52,7 +64,10 @@ import { Admin } from './admin/models/admin.model';
             username: process.env.POSTGRES_USER,
             password: String(process.env.POSTGRES_PASSWORD),
             database: process.env.POSTGRES_DB,
-            models: [Venue, VenueType, VenueAndType, Region, District, VenuePhoto, SeatType, Seat, EventType, Language, Event, HumanCategory, EventLang, Status, TicketType, Ticket, Customer, CustomerCard, Admin],
+            models: [Venue, VenueType, VenueAndType, Region, District, 
+                VenuePhoto, SeatType, Seat, EventType, Language, Event, 
+                HumanCategory, EventLang, Status, TicketType, Ticket, 
+                Customer, CustomerCard, Admin, PaymentMethod, Discount, Booking, Cart, Country, CustomerAddress],
             autoLoadModels: true,
             logging: true
         }),
@@ -75,7 +90,13 @@ import { Admin } from './admin/models/admin.model';
         CustomerModule,
         CustomerCardModule,
         CartModule,
-        AdminModule],
+        AdminModule,
+        BookingModule,
+        PaymentMethodModule,
+        DiscountModule,
+        CustomerAddressModule,
+        CountryModule,
+    ],
     controllers: [],
     providers: [],
     exports: []

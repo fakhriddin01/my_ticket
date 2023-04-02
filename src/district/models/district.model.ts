@@ -32,4 +32,6 @@ export class District extends Model<District, DistrictAttr> {
 
     @HasMany(()=>Venue)
     venues: Venue[];
+
+    
 }

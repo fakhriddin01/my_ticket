@@ -14,7 +14,7 @@ export class VenueAndTypeService {
   }
 
   async findAll() {
-    return this.venueAndTypeRepo.findAll({include: {all:true}});
+    return this.venueAndTypeRepo.findAll({include: [{all:true, nested: true}]});
   }
 
   findOne(id: number) {

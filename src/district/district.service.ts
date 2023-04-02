@@ -9,7 +9,7 @@ export class DistrictService {
   constructor(@InjectModel(District) private districtRepo: typeof District){}
 
   create(createDistrictDto: CreateDistrictDto) {
-    return this.districtRepo.create(createDistrictDto);;
+    return this.districtRepo.create(createDistrictDto);
   }
 
   findAll() {

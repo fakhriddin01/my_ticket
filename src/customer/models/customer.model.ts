@@ -1,6 +1,8 @@
 import { Column, DataType, Table, Model, BelongsTo, HasMany, HasOne, ForeignKey } from "sequelize-typescript";
 import { Language } from "../../language/models/language.model";
 import { CustomerCard } from "../../customer_card/models/customer_card.model";
+import { CustomerAddress } from "../../customer_address/models/customer_address.model";
+import { Cart } from "../../cart/models/cart.model";
 
 
 interface CustomerAttr {
@@ -77,11 +79,11 @@ export class Customer extends Model<Customer, CustomerAttr>{
     cards: CustomerCard[];
 
     
-    // @HasOne(()=>UserWallet)
-    // wallet: UserWallet
+    @HasOne(()=>CustomerAddress)
+    address: CustomerAddress[]
     
-    // @HasMany(()=>Stadium)
-    // stadiums: Stadium[];
+    @HasMany(()=>Cart)
+    carts: Cart[];
 
     // @HasMany(()=>Comment)
     // comments: Stadium[];
